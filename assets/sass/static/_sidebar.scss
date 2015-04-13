@@ -1,0 +1,163 @@
+/*
+The static site sidebar.
+
+@since 0.1.0
+*/
+@import "../settings";
+@import "../../vendor/sass/foundation/components/type";
+
+@mixin menu-item-active {
+  background: lighten($primary-color, 5%);
+  left: -$gutter / 2;
+
+  @media #{$small-only} {
+    margin-right: -$gutter;
+  }
+}
+
+// Small screens, the sidebar should fill the entire width
+@media #{$small-only} {
+  .move-left > .inner-wrap {
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  #site-sidebar {
+    width: 100%;
+  }
+}
+
+// Not small screens, sidebar shouldn't be moveable
+@media #{$medium-up} {
+
+  .move-left > .inner-wrap {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+#site-sidebar {
+  padding: $gutter;
+  box-sizing: inherit;
+  background: #222;
+
+  @media #{$medium-up} {
+
+    // Override off canvas for non-mobile
+    transform: translate3d(0, 0, 0);
+    position: fixed;
+  }
+
+  // Navigation
+  .site-nav {
+
+    .menu {
+      list-style: none;
+      margin: 0;
+    }
+
+    .menu-item {
+      color: #fff;
+      font-family: $header-font-family;
+      text-transform: uppercase;
+
+      // Too wide when sidebar is full-width
+      @media #{$small-only} {
+        max-width: 300px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      a {
+        color: inherit;
+        padding: 5px 10px;
+        margin: 10px 0;
+        background: $primary-color;
+        display: block;
+        position: relative;
+        left: 0;
+        transition: left 300ms, background 300ms;
+
+        &:hover {
+          @include menu-item-active;
+        }
+      }
+
+      &.current-menu-item {
+        a {
+          @include menu-item-active;
+        }
+      }
+
+      &:first-of-type {
+        a {
+          margin-top: 0;
+        }
+      }
+
+      &:last-of-type {
+        a {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  // Header (with close menu)
+  .sidebar-header {
+    @extend h1;
+    text-align: center;
+
+    a {
+      color: #fff;
+    }
+
+    // Hide for non-small
+    @media #{$medium-up} {
+      display: none;
+    }
+  }
+
+  // Bottom text
+  .sidebar-footer {
+    color: #888;
+    text-align: center;
+    margin-top: $gutter;
+
+    // Tagline
+    .tagline {
+      text-align: left;
+      font-style: italic;
+      margin: $gutter 0;
+
+      p {
+        font-size: 100%;
+      }
+    }
+
+    p {
+      font-size: 80%;
+      margin: 0;
+    }
+
+    a {
+      @extend a.color-invert;
+    }
+  }
+}
+
+// Admin bar
+body.admin-bar {
+
+  @media #{$medium-up} {
+    #site-sidebar {
+      top: 32px;
+    }
+
+    .move-left #site-sidebar {
+      top: 0;
+    }
+  }
+
+  @media screen and (max-width: 782px) and (min-width: $medium-range) {
+    top: 46px;
+  }
+}

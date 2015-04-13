@@ -1,0 +1,37 @@
+/*
+The static site content.
+
+@since 0.1.0
+*/
+
+@import "../settings";
+@import "../../vendor/sass/foundation/components/offcanvas";
+
+#site-content {
+  padding: $gutter;
+  margin-top: $gutter;
+
+  @media #{$medium-up} {
+
+    // Make room for sidebar for non-mobile
+    margin-right: $off-canvas-width;
+  }
+
+  ul {
+    margin-left: $gutter * 2;
+  }
+
+  .alignleft {
+    float: left;
+    margin-right: 10px;
+  }
+
+  .alignright {
+    float: right;
+    margin-left: 10px;
+  }
+
+  .aligncenter {
+    margin: 0 auto;
+  }
+}

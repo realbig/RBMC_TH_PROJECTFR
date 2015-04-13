@@ -1,0 +1,57 @@
+/*
+The static site header.
+
+@since 0.1.0
+*/
+
+@import "../settings";
+
+#site-header {
+  background: #444;
+  color: #fff;
+  padding: $gutter;
+
+  @media #{$small-only} {
+    text-align: center;
+  }
+
+  .site-title {
+    margin: 0;
+    text-transform: uppercase;
+    color: inherit;
+
+    a {
+      color: inherit;
+
+      &:hover {
+        color: $anchor-font-color-hover;
+      }
+    }
+
+    .flag {
+      margin-left: 10px;
+      vertical-align: baseline;
+      width: 60px;
+      height: auto;
+    }
+  }
+
+  .site-tagline {
+    margin: 0;
+  }
+
+  .sidebar-toggle {
+    @extend h1;
+    margin: 0;
+    line-height: 1;
+
+    // Don't show unless on small screen
+    @media #{$medium-up} {
+      display: none;
+    }
+
+    a {
+      color: #fff;
+    }
+  }
+}

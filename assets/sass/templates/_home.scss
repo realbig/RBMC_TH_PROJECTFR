@@ -1,0 +1,33 @@
+/*
+Styles page.php.
+
+@since 0.1.0
+*/
+
+@import "../settings";
+
+body.home {
+  .home-box {
+    background: $primary-color;
+    padding: $gutter;
+    margin: $gutter 0 ($gutter * 2) 0;
+    color: #fff;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .home-box-title {
+    border-bottom: 1px solid #ddd;
+
+  }
+}

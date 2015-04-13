@@ -1,0 +1,40 @@
+/*!
+Theme Name: Project Freedom
+Description: Project Freedom is awesome, and so is its website.
+Author: Joel Worsham
+Author URI: http://realbigmarketing.com/staff/joel-worsham
+Version: 0.1.0
+*/
+
+// Vendor
+@import "../vendor/css/normalize";
+@import "../vendor/css/icomoon";
+
+// Deps
+@import "settings.scss";
+
+// Foundation
+// Here we control all of the various foundation components to use
+@import "../vendor/sass/foundation/components/visibility";
+@import "../vendor/sass/foundation/components/clearing";
+@import "../vendor/sass/foundation/components/grid";
+@import "../vendor/sass/foundation/components/buttons";
+@import "../vendor/sass/foundation/components/type";
+@import "../vendor/sass/foundation/components/forms";
+@import "../vendor/sass/foundation/components/offcanvas";
+
+// Setup
+@import "base";
+
+// Static
+@import "static/header";
+@import "static/footer";
+@import "static/sidebar";
+@import "static/content";
+
+// Templates
+@import "templates/common";
+@import "templates/home";
+
+// Overrides
+@import "wp";

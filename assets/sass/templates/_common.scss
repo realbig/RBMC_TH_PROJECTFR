@@ -1,0 +1,48 @@
+/*
+Styles shared among all templates.
+
+@since 0.1.0
+*/
+
+@import "../settings";
+@import "../../vendor/sass/foundation/components/type";
+
+.page-title {
+  text-align: center;
+
+  h1 {
+    color: $secondary-color;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: $h1-font-size * 0.75;
+    max-width: 80%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding: 0 $gutter;
+
+    &:before, &:after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 10%;
+      height: 3px;
+      top: 50%;
+      background: $secondary-color;
+      vertical-align: middle;
+    }
+
+    &:before {
+      left: -10%;
+    }
+
+    &:after {
+      right: -10%;
+    }
+  }
+}
+
+.page-content {
+
+}
